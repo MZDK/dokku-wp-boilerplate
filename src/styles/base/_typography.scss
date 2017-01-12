@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,900');
+
+body{
+	font-family: 'Roboto', sans-serif;
+}
+
+p, span, li, a{
+	line-height: 160%;
+}
+
+h1, h2, h3{
+	color: $darkgreen;
+}
+
+h4, h5, p{
+	color: $darkgray;
+}
+
+a{
+	color: $darkgreen;
+}

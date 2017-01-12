@@ -1,0 +1,18 @@
+.ribbon-component{
+	.ribbon-item{
+		margin-top: 30px;
+		@include breakpoint(md) {
+			margin-top: 45px;
+		}
+		@include breakpoint(lg) {
+			margin-top: 60px;
+		}
+		&:first-of-type{
+			margin-top: 0;
+		}
+		.ribbon-headline{
+			margin-top: 0;
+			color: $darkgreen;
+		}
+	}
+}

@@ -1,0 +1,59 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+		<div class="container">
+			<div class="container-inner">
+
+				<header class="header" >
+					{% block header %}
+						<div class="wrapper">
+							<nav id="nav-main" class="nav-main navbar navbar-default" role="navigation">
+							    <!-- Brand and toggle get grouped for better mobile display -->
+							    <div class="navbar-header">
+							      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							        <span class="sr-only">Toggle navigation</span>
+							        <span class="icon-bar"></span>
+							        <span class="icon-bar"></span>
+							        <span class="icon-bar"></span>
+							      </button>
+							      <a class="navbar-brand hidden-sm hidden-md hidden-lg" href="#">Fensmark Fysioterapi</a>
+							    </div>
+							    <!-- Collect the nav links, forms, and other content for toggling -->
+							    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+										{% include "menu.twig" with {'menu': menu.get_items} %}
+							    </div><!-- /.navbar-collapse -->
+							</nav><!-- #nav -->
+						</div>
+					{% endblock %}
+				</header>
+
+				<section id="content" role="main" class="content-wrapper content">
+					<div class="wrapper {{sidebar_class}}">
+						{% block content %}
+							Sorry, no content
+						{% endblock %}
+					</div>
+					{% if sidebar %}
+						<aside class="layout-sidebar">
+							{{sidebar}}
+						</aside>
+					{% endif %}
+				</section>
+
+				{% block footer %}
+					<footer id="footer" class="footer">
+						{% include 'footer.twig' %}
+					</footer>
+					{{ function('wp_footer') }}
+				{% endblock %}
+
+			</div><!-- container-inner -->
+		</div><!-- container -->
+	</body>
+</html>

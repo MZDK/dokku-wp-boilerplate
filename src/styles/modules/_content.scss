@@ -1,0 +1,25 @@
+.content{
+	background-color: $white;
+	min-height: 50vh;
+	padding: 15px;
+	@include breakpoint(sm){
+		padding: 30px;
+	}
+	@include breakpoint(md){
+		padding: 45px;
+	}
+	@include breakpoint(lg){
+		padding: 60px;
+	}
+	.article-body{
+		padding: 30px 0;
+		@include breakpoint(sm){
+			padding: 0;
+		}
+		h1, h2, h3{
+			&:first-of-type{
+				margin-top: 0;
+			}
+		}
+	}
+}

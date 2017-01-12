@@ -1,0 +1,23 @@
+.component{
+
+	display: block;
+	margin: 30px 0 0;
+	padding: 0;
+
+	@include breakpoint(md){
+		margin: 45px 0 0;
+	}
+	@include breakpoint(lg){
+		margin: 50px 0 0;
+	}
+
+	&:first-of-type{
+		margin: 0 !important;
+	}
+
+	&-headline{
+		margin-top: 0;
+		color: $darkgreen;
+	}
+
+}

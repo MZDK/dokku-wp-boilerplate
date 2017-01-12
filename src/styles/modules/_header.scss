@@ -1,0 +1,46 @@
+.header{
+	border-top: 5px solid $darkgreen;
+	.navbar{
+		margin: 0;
+		padding: 0;
+		border-radius: 0;
+		background-color: $whitesmoke;
+		border: 0;
+		min-height: 0;
+		.navbar-collapse{
+			border: 0;
+			margin: 0;
+			@include breakpoint(sm){
+				padding: 0;
+			}
+			ul.navbar-nav{
+				li.current-menu-item{
+					a{
+						background-color: darken($whitesmoke, 5);
+						color: $darkgreen !important;
+					}
+				}
+				li.menu-item{
+					a{
+						padding: 15px 10px;
+						@include breakpoint(sm){
+							padding: 15px 10px;
+						}
+						@include breakpoint(md){
+							padding: 15px 20px;
+						}
+						font-size: 12px;
+						font-weight: 500;
+						text-transform: uppercase;
+						transition: background-color .2s ease-in-out, color .2s ease-in-out;
+						color: $lightgray;
+						&:hover{
+							background-color: darken($whitesmoke, 5);
+							color: $darkgreen;
+						}
+					}
+				}
+			}
+		}
+	}
+}

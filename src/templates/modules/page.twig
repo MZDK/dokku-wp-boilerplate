@@ -1,0 +1,58 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<section class="article-content">
+				<!-- <h1 class="article-h1">{{post.title}}</h1> -->
+				<div class="row">
+					<div class="col-sm-6">
+
+						{% for component in post.get_field('components') %}
+							{% if component.acf_fc_layout == 'image' %}
+								<div class="component image-component">
+									<img src="{{component.img}}" alt="">
+								</div>
+							{% endif %}
+						{% endfor %}
+
+					</div>
+					<div class="col-sm-6">
+						<div class="article-body">
+
+							{% for component in post.get_field('components') %}
+						    {% if component.acf_fc_layout == 'content' %}
+									<div class="component content-component">
+										{{component.editor}}
+									</div>
+								{% elseif component.acf_fc_layout == 'ribbon' %}
+									<div class="component ribbon-component">
+										{% for ribbon in component.ribbons %}
+											<div class="ribbon-item">
+												<h5 class="ribbon-headline">{{ribbon.headline}}</h5>
+												{{ribbon.content}}
+											</div>
+										{% endfor %}
+									</div>
+					    	{% elseif component.acf_fc_layout == 'list' %}
+									<div class="component list-component">
+										<h5 class="component-headline">{{component.headline}}</h5>
+										<ul>
+											{% for list in component.lists %}
+												<li class="list-item">
+													<span class="list-key">{{list.key}}</span>
+													<span class="list-value">{{list.value}}</span>
+												</li>
+											{% endfor %}
+										</ul>
+									</div>
+						    {% endif %}
+							{% endfor %}
+
+						</div>
+					</div>
+				</div>
+			</section>
+		</article>
+	</div><!-- /content-wrapper -->
+{% endblock %}

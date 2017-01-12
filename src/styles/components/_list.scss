@@ -1,0 +1,25 @@
+.list-component{
+	ul{
+		display: inline-block;
+		width: auto;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		li.list-item{
+			display: table;
+			width: 100%;
+			span.list-key, span.list-value{
+				display: table-cell;
+				vertical-align: middle;
+			}
+			span.list-key{
+				min-width: 150px;
+				text-align: left;
+			}
+			span.list-value{
+				min-width: 100px;
+				text-align: right;
+			}
+		}
+	}
+}

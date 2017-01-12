@@ -1,0 +1,37 @@
+html{
+	height: 100vh;
+}
+
+html, body{
+	width: 100%;
+}
+
+body{
+	height: 100%;
+	background-color: $darkgray;
+	background-image: url('assets/img/background.png');
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.container{
+	padding: 0;
+	// @include breakpoint(sm){
+	// 	padding: 0 15px;
+	// }
+}
+
+.container-inner{
+	margin: 0;
+	@include breakpoint(sm){
+		box-shadow: 0 4px 12px 0 rgba($black,.2);
+		margin: 30px 0;
+	}
+	@include breakpoint(md){
+		margin: 45px 0;
+	}
+	@include breakpoint(lg){
+		margin: 60px 0;
+	}
+}
